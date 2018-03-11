@@ -4,8 +4,8 @@ Implementation-Version: 0.1.0-SNAPSHOT
 Built-By: Dilusha Withanage
 Implementation-Vendor-Id: net.dilwit
 Build-Jdk: 1.8.0_162
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/spring-cloud-ms-library/spring-cloud-ms-library-inv
- entory-service
+Implementation-URL: http://projects.spring.io/spring-boot/spring-cloud
+ -ms-library/spring-cloud-ms-library-inventory-service/
 Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
 

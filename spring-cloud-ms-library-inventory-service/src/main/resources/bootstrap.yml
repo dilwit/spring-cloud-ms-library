@@ -15,13 +15,15 @@ spring:
             # Do not start-up config-server is not available
             failFast: true 
 server:
-    # Planning to access the service via it's name, and able to scale in future
-    port: 0
-    
+  # Planning to access the service via it's name, and able to scale in future
+  port: 0
+
 eureka:
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://eureka:123456789@localhost:8761/eureka/}
   instance:
+    hostname: localhost
     preferIpAddress: true
-            
