@@ -1,0 +1,8 @@
+# Information for actuator /info endpoint. Maven build will provide actual values.
+info:
+    app:
+        name: spring-cloud-ms-library-member-service
+        artifactId: spring-cloud-ms-library-member-service
+        version: 0.1.0-SNAPSHOT
+        applicationName: ${spring.application.name}
+        serverPort: ${server.port}

@@ -10,20 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 class Controller {	
 	
 	// @TODO: trigger refreshScope
-
-    @Value("${system.version: Default version}")
-    private String version;
     
     @Value("${system.welcome: Default welcome}")
     private String welcome;
+    
+    @Value("${spring.application.name}")
+    private String appName;
 
-    @RequestMapping("/systemInfo")
-    String getMessage() {
+    @RequestMapping("/welcome")
+    String welcome() {
     	
-    	StringBuilder sb = new StringBuilder();
-    	sb.append(this.version);
-    	sb.append(" | ");
+    	StringBuilder sb = new StringBuilder();    	
     	sb.append(this.welcome);
+    	sb.append(" | ");
+    	sb.append(this.appName);
+    	sb.append(" | ");
     	
         return sb.toString();
     }
