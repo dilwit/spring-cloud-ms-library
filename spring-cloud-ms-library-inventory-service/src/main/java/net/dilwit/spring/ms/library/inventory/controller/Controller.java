@@ -17,8 +17,8 @@ class Controller {
     @Value("${spring.application.name}")
     private String appName;
 
-    @RequestMapping("/sysemInfo")
-    String sysemInfo() {
+    @RequestMapping("/welcome")
+    String welcome() {
     	
     	StringBuilder sb = new StringBuilder();    	
     	sb.append(this.welcome);
