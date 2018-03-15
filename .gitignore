@@ -1,3 +1,5 @@
 
 spring-cloud-ms-library-inventory-service/target/classes/META-INF/maven/net.dilwit/spring-cloud-ms-library-inventory-service/pom.properties
 spring-cloud-ms-library-member-service/target/classes/META-INF/maven/net.dilwit/spring-cloud-ms-library-member-service/pom.properties
+/spring-cloud-ms-library-inventory-service/target
+/spring-cloud-ms-library-member-service/target
