@@ -31,7 +31,7 @@ class Controller {
     	sb.append(" | ");
     	sb.append(this.appName);
     	sb.append(" | ");
-    	sb.append("And I'm connecting with ");
+    	sb.append("And I'm connecting with - ");
     	sb.append(commonServiceClient.hello());
     	
         return sb.toString();
