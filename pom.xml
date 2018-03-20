@@ -5,6 +5,7 @@
   <version>0.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
+    <module>spring-cloud-ms-library-domain</module>
   	<module>spring-cloud-ms-library-member-service</module>
   	<module>spring-cloud-ms-library-inventory-service</module>
   	<module>spring-cloud-ms-library-common-service</module>
