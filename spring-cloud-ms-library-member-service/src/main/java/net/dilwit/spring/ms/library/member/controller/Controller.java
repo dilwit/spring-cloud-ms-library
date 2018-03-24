@@ -3,17 +3,24 @@ package net.dilwit.spring.ms.library.member.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.dilwit.spring.ms.library.member.service.feign.CommonServiceClient;
+import net.dilwit.spring.ms.library.member.controller.vm.RegistrationVM;
+import net.dilwit.spring.ms.library.member.service.feign.PaymentServiceClient;
+import net.dilwit.spring.ms.library.member.service.i.IMeberService;
 
 @RefreshScope
 @RestController
 class Controller {	
 	
 	@Autowired
-	CommonServiceClient commonServiceClient;
+	PaymentServiceClient commonServiceClient;
+	
+	@Autowired
+	IMeberService memberService;
 	
 	// @TODO: trigger refreshScope
     
@@ -35,5 +42,11 @@ class Controller {
     	sb.append(commonServiceClient.hello());
     	
         return sb.toString();
+    }
+    
+    @RequestMapping("/register")
+    public ResponseEntity<Void> register(@RequestBody RegistrationVM registrationVM) {
+    	memberService.register(registrationVM);
+    	return ResponseEntity.ok().build();
     }
 }

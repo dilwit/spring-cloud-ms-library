@@ -1,4 +1,4 @@
-package net.dilwit.spring.ms.library.common;
+package net.dilwit.spring.ms.library.payment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

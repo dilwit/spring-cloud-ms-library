@@ -1,6 +1,6 @@
 spring:
     application:
-        name: spring-cloud-ms-library-common-service
+        name: spring-cloud-ms-library-payment-service
     profiles:
         # Provides access to multiple property files
         active: staging
