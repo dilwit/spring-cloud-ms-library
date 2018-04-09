@@ -4,6 +4,6 @@ import java.util.Map;
 
 public interface IPaymentService {
 
-	void process(Map<String, String> paymentData);
+	Long process(Map<String, String> paymentData);
 
 }

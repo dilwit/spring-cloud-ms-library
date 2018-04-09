@@ -2,21 +2,24 @@ package net.dilwit.spring.ms.library.payment.controller;
 
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.dilwit.spring.ms.library.payment.service.i.IPaymentService;
 
 @RefreshScope
 @RestController
-class Controller {	
+public class Controller {	
 	
-	@Autowired
-	IPaymentService paymentService;
+	private IPaymentService paymentService;
+	
+	public Controller(IPaymentService paymentService) {
+		this.paymentService = paymentService;
+	}
 	
     @RequestMapping("/welcome")
     String welcome() {
@@ -25,8 +28,8 @@ class Controller {
         return sb.toString();
     }
     
-    @RequestMapping("/pay")
-    public ResponseEntity<Void> register(@RequestBody Map<String, String> paymentData) {
+    @RequestMapping(name = "/pay", method = RequestMethod.POST)
+    public ResponseEntity<Void> pay(@RequestBody Map<String, String> paymentData) {
     	paymentService.process(paymentData);
     	return ResponseEntity.ok().build();
     }
