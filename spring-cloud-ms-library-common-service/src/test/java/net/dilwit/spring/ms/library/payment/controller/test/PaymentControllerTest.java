@@ -1,4 +1,4 @@
-package net.dilwit.spring.ms.library.payment.test;
+package net.dilwit.spring.ms.library.payment.controller.test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +20,8 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import net.dilwit.spring.ms.library.payment.controller.Controller;
+import net.dilwit.spring.ms.library.payment.domain.Payment;
+import net.dilwit.spring.ms.library.payment.exception.InvalidDataException;
 import net.dilwit.spring.ms.library.payment.service.PaymentService;
 
 @RunWith(SpringRunner.class)
@@ -36,13 +38,36 @@ public class PaymentControllerTest {
 	@Test
 	public void pay_shouldMakePaymentSuccessFully() throws Exception {
 		
-		Map<String, String> dataMap = new HashMap<>();		
+		// given
+		Map<String, String> dataMap = new HashMap<>();	
+		BDDMockito.given(paymentService.process(dataMap)).willReturn(Payment.Status.SUCESS);
+		
+		// when
 		String content = new ObjectMapper().writeValueAsString(dataMap);
 		
 		mockMvc.perform(MockMvcRequestBuilders.post("/pay")
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(content))
-			.andExpect(MockMvcResultMatchers.status().isOk());
+		
+		// then
+		.andExpect(MockMvcResultMatchers.status().isOk());
+	}
+	
+	@Test
+	public void pay_shouldThrow400ErrorWhenInvalidDataProvided() throws Exception {
+		
+		// given
+		Map<String, String> dataMap = new HashMap<>();	
+		BDDMockito.given(paymentService.process(dataMap)).willThrow(new InvalidDataException());
+		
+		// when
+		String content = new ObjectMapper().writeValueAsString(dataMap);
+		mockMvc.perform(MockMvcRequestBuilders.post("/pay")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(content))
+		
+		// then
+		.andExpect(MockMvcResultMatchers.status().is4xxClientError());	
 	}
 
 }

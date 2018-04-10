@@ -11,11 +11,13 @@ import javax.persistence.NamedQuery;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import net.dilwit.spring.ms.library.domain.SharedMetaData;
 
 @Entity
 @NamedQuery(name="Payment.findAll", query="SELECT p FROM Payment p")
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Payment extends SharedMetaData implements Serializable {
 	
@@ -37,6 +39,6 @@ public class Payment extends SharedMetaData implements Serializable {
 	
 	@Column
 	@Enumerated(EnumType.STRING)
-	@Getter @Setter private Status status;
+	@Getter @Setter private Status status = Status.FAILED;
 
 }
