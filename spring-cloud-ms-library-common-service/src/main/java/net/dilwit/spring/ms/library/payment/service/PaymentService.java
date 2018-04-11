@@ -16,9 +16,12 @@ public class PaymentService implements IPaymentService {
 	
 	private PaymentRepo repo;
 	
+	private PaymentGateway paymentGateway;
+	
 	@Autowired
-	public PaymentService(PaymentRepo repo) {
+	public PaymentService(PaymentRepo repo, PaymentGateway paymentGateway) {
 		this.repo = repo;
+		this.paymentGateway = paymentGateway;
 	}
 
 	@Override
@@ -32,9 +35,9 @@ public class PaymentService implements IPaymentService {
 		if(!ObjectUtils.allNotNull(cardNumber, amount))
 			throw new InvalidDataException();
 		
-		// TODO@dilusha - Talk to bank to find out result
+		Payment.Status verifyStatus = paymentGateway.verify(paymentData.get("cardNumber"), paymentData.get("amount"), "DEBIT");
 		
-		Payment payment = new Payment(cardNumber, amount, Payment.Status.SUCESS);
+		Payment payment = new Payment(cardNumber, amount, verifyStatus);
 		return repo.save(payment).getStatus();
 	}
 }
