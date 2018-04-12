@@ -1,8 +1,0 @@
-# Information for actuator /info endpoint. Maven build will provide actual values.
-info:
-    app:
-        name: @project.name@
-        artifactId: @project.artifactId@
-        version: @project.version@
-        applicationName: ${spring.application.name}
-        serverPort: ${server.port}

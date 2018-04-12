@@ -4,9 +4,12 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.NamedQuery;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -19,11 +22,17 @@ import net.dilwit.spring.ms.library.domain.SharedMetaData;
 @NamedQuery(name="Payment.findAll", query="SELECT p FROM Payment p")
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
+/*@EntityListeners(AuditingEntityListener.class)*/
 public class Payment extends SharedMetaData implements Serializable {
 	
 	public enum Status {
 	    SUCESS,
 	    FAILED
+	}
+	
+	public enum Type {
+		CREDIT,
+		DEBIT
 	}
 	
 	/**
@@ -36,6 +45,10 @@ public class Payment extends SharedMetaData implements Serializable {
 
 	@Column
 	@Getter @Setter private String amount;
+	
+	@Column
+	@Enumerated(EnumType.STRING)
+	@Getter @Setter private Type type;
 	
 	@Column
 	@Enumerated(EnumType.STRING)

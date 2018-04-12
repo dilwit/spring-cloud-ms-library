@@ -3,12 +3,14 @@ package net.dilwit.spring.ms.library.payment;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class LibraryCommonApplication {
+/*@EnableJpaAuditing*/
+public class LibraryPaymentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LibraryCommonApplication.class, args);
+		SpringApplication.run(LibraryPaymentApplication.class, args);
 	}
 }

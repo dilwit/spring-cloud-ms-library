@@ -37,7 +37,7 @@ public class PaymentService implements IPaymentService {
 		
 		Payment.Status verifyStatus = paymentGateway.verify(paymentData.get("cardNumber"), paymentData.get("amount"), "DEBIT");
 		
-		Payment payment = new Payment(cardNumber, amount, verifyStatus);
+		Payment payment = new Payment(cardNumber, amount, Payment.Type.DEBIT, verifyStatus);
 		return repo.save(payment).getStatus();
 	}
 }
