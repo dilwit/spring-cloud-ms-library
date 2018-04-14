@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-/*@EnableJpaAuditing*/
+@EnableJpaAuditing
 @EnableAutoConfiguration
 public class LibraryPaymentApplication {
 

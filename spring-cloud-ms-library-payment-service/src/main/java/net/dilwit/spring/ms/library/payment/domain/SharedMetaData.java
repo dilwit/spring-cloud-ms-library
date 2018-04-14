@@ -20,7 +20,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @MappedSuperclass
-/*@EntityListeners(AuditingEntityListener.class)*/
+@EntityListeners(AuditingEntityListener.class)
 public abstract class SharedMetaData {
 	
 	@Id

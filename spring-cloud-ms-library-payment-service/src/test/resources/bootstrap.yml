@@ -3,18 +3,11 @@ spring:
         name: spring-cloud-ms-library-payment-service
     profiles:
         # Provides access to multiple property files
-        active: staging
+        active: test
     cloud:
         # config-server with HTTP-Basic authentication
         config:
             enabled: false
-            # Denotes the config-repo branch in which client interested in i.e master, version1.5
-            label: master
-            uri: http://localhost:8888
-            username: xyz
-            password: 123456            
-            # Do not start-up config-server is not available
-            failFast: true
 server:
   # Planning to access the service via it's name, and able to scale in future
   port: 0
@@ -22,10 +15,3 @@ server:
 eureka:
   client:
     enabled: false
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: ${EUREKA_URI:http://eureka:123456789@localhost:8761/eureka/}
-  instance:
-    hostname: localhost
-    preferIpAddress: true
