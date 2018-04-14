@@ -16,7 +16,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.dilwit.spring.ms.library.domain.SharedMetaData;
 
 @Entity
 @NamedQuery(name="Payment.findAll", query="SELECT p FROM Payment p")

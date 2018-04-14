@@ -10,12 +10,14 @@
 	</parent>
 	<artifactId>spring-cloud-ms-library-payment-service</artifactId>
 	
-	<dependencies>
+<!-- Removing this as mvn install can not detect this during test run, and copy/paste required files. -->
+<!-- 	<dependencies>
   	 <dependency>
 	   <groupId>net.dilwit</groupId>
 	   <artifactId>spring-cloud-ms-library-domain</artifactId>
 	   <version>0.1.0-SNAPSHOT</version>
+	   <scope>runtime</scope>
 	 </dependency>
-    </dependencies>  
+    </dependencies>   -->
 	
 </project>

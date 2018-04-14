@@ -1,5 +1,11 @@
 C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\controller\Controller.java
-C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\service\feign\CommonServiceClient.java
+C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\domain\Member.java
+C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\service\feign\PaymentServiceClientFallBack.java
+C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\service\MemberService.java
+C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\repo\MemberRepo.java
+C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\service\feign\PaymentServiceClient.java
 C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\LibraryMemberApplication.java
-C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\service\feign\CommonServiceClientFallBack.java
+C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\service\i\IMeberService.java
+C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\controller\vm\RegistrationVM.java
+C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\domain\Login.java
 C:\Users\Dilusha Withanage\Documents\GitHub\spring-cloud-ms-library\spring-cloud-ms-library-member-service\src\main\java\net\dilwit\spring\ms\library\member\config\Config.java
