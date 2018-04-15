@@ -42,18 +42,4 @@ public class PaymentIT {
 		// clean
 		repo.deleteAll();
 	}
-	
-	@Test
-	public void pay_shouldReturnBadRequestOnInvalidInputData() throws Exception {
-		
-		// arrange
-		Map<String, String> paymentData = null;
-				
-		// act
-		ResponseEntity<Void> result = restTemplate.postForEntity("/pay", paymentData, Void.class);
-				
-		// assert
-		Assertions.assertThat(result.getStatusCode().is4xxClientError());
-		
-	}
 }

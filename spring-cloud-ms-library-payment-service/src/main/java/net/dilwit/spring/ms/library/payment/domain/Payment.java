@@ -4,12 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.NamedQuery;
-
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -21,7 +18,6 @@ import lombok.Setter;
 @NamedQuery(name="Payment.findAll", query="SELECT p FROM Payment p")
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
-/*@EntityListeners(AuditingEntityListener.class)*/
 public class Payment extends SharedMetaData implements Serializable {
 	
 	public enum Status {
